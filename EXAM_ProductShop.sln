@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXAM_ProductShop", "EXAM_ProductShop\EXAM_ProductShop.csproj", "{03F0599E-3E17-4840-9EC2-C449E3DE2FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Worker", "DB_Worker\DB_Worker.csproj", "{33C24220-DF83-4B2F-A1F5-505679E7E983}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F0599E-3E17-4840-9EC2-C449E3DE2FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F0599E-3E17-4840-9EC2-C449E3DE2FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F0599E-3E17-4840-9EC2-C449E3DE2FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F0599E-3E17-4840-9EC2-C449E3DE2FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C24220-DF83-4B2F-A1F5-505679E7E983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C24220-DF83-4B2F-A1F5-505679E7E983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C24220-DF83-4B2F-A1F5-505679E7E983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C24220-DF83-4B2F-A1F5-505679E7E983}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B36C0F4B-617C-4A3D-ACE0-79DA705F1622}
+	EndGlobalSection
+EndGlobal
