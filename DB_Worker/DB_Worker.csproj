@@ -57,6 +57,9 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlTables\tblSales.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SqlTables\tblClients.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

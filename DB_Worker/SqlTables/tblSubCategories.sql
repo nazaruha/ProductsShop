@@ -5,6 +5,6 @@ CREATE TABLE [dbo].[tblSubCategories](
   [CategoryId] [int] NOT NULL,
   [Name] [nvarchar](100) NOT NULL,
 
-  COSNTRAINT [FK_tblSubCategories_tblCategories] FOREIGN KEY([CategoryId])
+  CONSTRAINT [FK_tblSubCategories_tblCategories] FOREIGN KEY([CategoryId])
    REFERENCES [dbo].[tblCategories] ([Id])
 );'

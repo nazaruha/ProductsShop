@@ -33,6 +33,7 @@ namespace DB_Worker
             con = new SqlConnection(connectionDB + $"Initial Catalog={database}");
             con.Open();
             cmd = con.CreateCommand();
+            GenerateTables();
             Console.WriteLine("END");
         }
 
@@ -55,7 +56,7 @@ namespace DB_Worker
 
         static void GenerateTables()
         {
-            string[] tables = { "tblGroups.sql", "tblStudents.sql", "tblSubjects.sql", "tblStudentSubjects.sql" }; // tblSubjects.sql (incorrect syntax near int.)
+            string[] tables = { "tblCategories.sql", "tblSubCategories.sql", "tblProducts.sql", "tblClients.sql", "tblBasket.sql", "tblSales.sql" };
             foreach (var table in tables)
             {
                 ExecuteCommandFromFile(table);
