@@ -8,7 +8,7 @@ CREATE TABLE [dbo].[tblProducts](
   [CategoryId] [int] NOT NULL,
   [SubCategoryId] [int] NOT NULL,
 
-  COSNTRAINT [FK_tblProducts_tblCategories] FOREIGN KEY([CategoryId])
+  CONSTRAINT [FK_tblProducts_tblCategories] FOREIGN KEY([CategoryId])
    REFERENCES [dbo].[tblCategories] ([Id]),
 
   CONSTRAINT [FK_tblProducts_tblSubCategories] FOREIGN KEY([SubCategoryId])
