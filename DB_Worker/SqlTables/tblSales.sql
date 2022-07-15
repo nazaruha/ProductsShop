@@ -5,9 +5,9 @@ CREATE TABLE [dbo].[tblSales](
   [ProductId] [int] NOT NULL,
   [Count] [int] NOT NULL,
 
-  CONSTRAINT [FK_tblBasket_tblClients] FOREIGN KEY([ClientId])
+  CONSTRAINT [FK_tblSales_tblClients] FOREIGN KEY([ClientId])
    REFERENCES [dbo].[tblClients] ([Id]),
 
-  CONSTRAINT [FK_tblBasket_tblProducts] FOREIGN KEY([ProductId])
+  CONSTRAINT [FK_tblSales_tblProducts] FOREIGN KEY([ProductId])
    REFERENCES [dbo].[tblProducts] ([Id])
 );'
