@@ -8,6 +8,6 @@ CREATE TABLE [dbo].[tblSales](
   CONSTRAINT [FK_tblBasket_tblClients] FOREIGN KEY([ClientId])
    REFERENCES [dbo].[tblClients] ([Id]),
 
-  COSNTRAINT [FK_tblBasket_tblProducts] FOREIGN KEY([ProductId])
+  CONSTRAINT [FK_tblBasket_tblProducts] FOREIGN KEY([ProductId])
    REFERENCES [dbo].[tblProducts] ([Id])
 );'
