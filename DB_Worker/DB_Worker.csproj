@@ -63,6 +63,9 @@
     <Content Include="SqlTables\tblProducts.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlTables\tblBasket.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SqlTables\tblSubCategories.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
