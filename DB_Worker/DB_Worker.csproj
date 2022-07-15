@@ -53,9 +53,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlTables\tblSales.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

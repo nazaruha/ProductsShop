@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EXAM_ProductShop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="488" Width="702">
+    <Canvas>
+        <ComboBox Name ="cb_Categoriies" FontSize="16" Height="30" Canvas.Left="10" Canvas.Top="50" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="cb_Categoriies_SelectionChanged"/>
+        <Label Content="Category" FontSize="20" Height="40" Canvas.Left="51" Canvas.Top="10" Width="98" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="Sub-category" FontSize="20" Height="40" Canvas.Left="287" Canvas.Top="10" Width="128" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ComboBox Name="cb_SubCategories" FontSize="16" Height="30" Canvas.Left="261" Canvas.Top="50" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+    </Canvas>
 </Window>
