@@ -5,7 +5,7 @@ CREATE TABLE [dbo].[tblBasket](
   [ProductId] [int] NOT NULL,
   [Count] [int] NOT NULL,
 
-  COSNTRAINT [FK_tblBasket_tblClients] FOREIGN KEY([ClientId])
+  CONSTRAINT [FK_tblBasket_tblClients] FOREIGN KEY([ClientId])
    REFERENCES [dbo].[tblClients] ([Id]),
 
   COSNTRAINT [FK_tblBasket_tblProducts] FOREIGN KEY([ProductId])
