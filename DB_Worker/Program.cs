@@ -52,5 +52,27 @@ namespace DB_Worker
             }
             return false;
         }
+
+        static void GenerateTables()
+        {
+            string[] tables = { "tblGroups.sql", "tblStudents.sql", "tblSubjects.sql", "tblStudentSubjects.sql" }; // tblSubjects.sql (incorrect syntax near int.)
+            foreach (var table in tables)
+            {
+                ExecuteCommandFromFile(table);
+            }
+        }
+
+        static void ExecuteCommandFromFile(string file)
+        {
+            string sql = ReadSqlFile(file);
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+        }
+
+        static string ReadSqlFile(string file)
+        {
+            string sql = File.ReadAllText($"{dirSql}\\{file}");
+            return sql;
+        }
     }
 }
