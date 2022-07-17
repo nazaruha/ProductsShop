@@ -104,6 +104,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\viewCurrentClient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\InsertClient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\viewProductsBySubCategory.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -29,7 +29,7 @@ namespace EXAM_ProductShop
         private SqlConnection con { get; set; }
         private SqlCommand cmd { get; set; }
 
-        public MainWindow()
+        public MainWindow(Client client)
         {
             InitializeComponent();
 
@@ -39,8 +39,31 @@ namespace EXAM_ProductShop
             con.Open();
             cmd = con.CreateCommand();
 
+            AddClientToDB(client);
             GetCategories();
 
+        }
+
+        private void AddClientToDB(Client client)
+        {
+            string script = File.ReadAllText($"{dirScripts}\\viewCurrentClient.sql");
+            cmd.CommandText = script;
+            cmd.Parameters.AddWithValue("@NameField", client.Name);
+            cmd.Parameters.AddWithValue("@PhoneField", client.Phone);
+
+            var reader = cmd.ExecuteReader();
+            reader.Read();
+            try
+            {
+                Client checkClient = new Client() { Name = reader["Name"].ToString(), Phone = reader["Phone"].ToString() };
+            }
+            catch
+            {
+                reader.Close();
+                script = File.ReadAllText($"{dirScripts}\\InsertClient.sql");
+                cmd.CommandText = script;
+                cmd.ExecuteNonQuery();
+            }
         }
 
         private void GetCategories()
