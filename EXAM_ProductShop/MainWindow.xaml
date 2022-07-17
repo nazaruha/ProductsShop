@@ -10,7 +10,16 @@
         <ComboBox Name ="cb_Categoriies" FontSize="16" Height="30" Canvas.Left="10" Canvas.Top="50" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="cb_Categoriies_SelectionChanged"/>
         <Label Content="Category" FontSize="20" Height="40" Canvas.Left="51" Canvas.Top="10" Width="98" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Label Content="Sub-category" FontSize="20" Height="40" Canvas.Left="287" Canvas.Top="10" Width="128" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox Name="cb_SubCategories" FontSize="16" Height="30" Canvas.Left="261" Canvas.Top="50" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ComboBox Name="cb_SubCategories" FontSize="16" Height="30" Canvas.Left="261" Canvas.Top="50" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="cb_SubCategories_SelectionChanged"/>
+        <DataGrid Name="dgProducts" Height="377" Canvas.Left="10" Canvas.Top="85" Width="532">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="30"/>
+                <DataGridTextColumn Header="Product" Binding="{Binding Name}" Width="120"/>
+                <DataGridTextColumn Header="Price ($)" Binding="{Binding Price}" Width="80"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="150"/>
+                <DataGridTextColumn Header="Sub-category" Binding="{Binding SubCategory}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Canvas>
 </Window>
