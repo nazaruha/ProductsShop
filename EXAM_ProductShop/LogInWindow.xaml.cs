@@ -23,5 +23,22 @@ namespace EXAM_ProductShop
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckTxts())
+            {
+                MainWindow mainWindow = new MainWindow();
+                this.Close();
+                mainWindow.ShowDialog();
+            }
+        }
+
+        private bool CheckTxts()
+        {
+            if (String.IsNullOrWhiteSpace(txtName.Text) || String.IsNullOrWhiteSpace(txtPhone.Text))
+                return false;
+            return true;
+        }
     }
 }

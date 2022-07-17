@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EXAM_ProductShop"
         mc:Ignorable="d"
-        Title="LogInWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="LogInWindow" Height="394" Width="743">
+    <Canvas>
+        <Label Content="Log In" FontSize="40" FontWeight="ExtraBlack" Canvas.Left="306" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136"/>
+        <StackPanel Canvas.Left="178" Canvas.Top="98">
+            <WrapPanel Canvas.Left="229" Canvas.Top="88">
+                <Label Content="Name:" FontSize="20" FontWeight="DemiBold"/>
+                <TextBox Name="txtName" FontSize="23" Width="297" Margin="26,0,0,0"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,30,0,0">
+                <Label Content="Phone" FontSize="20" FontWeight="DemiBold"/>
+                <TextBox Name="txtPhone" FontSize="23" Width="297" Margin="26,0,0,0"/>
+            </WrapPanel>
+            <Button Name="btnLogin" Content="LogIn" FontSize="28" FontWeight="DemiBold" Height="42" Margin="0,30,0,0" Click="btnLogin_Click"/>
+        </StackPanel>
+
+
+    </Canvas>
 </Window>
