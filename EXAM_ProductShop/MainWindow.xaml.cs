@@ -59,11 +59,11 @@ namespace EXAM_ProductShop
             }
             catch
             {
-                reader.Close();
                 script = File.ReadAllText($"{dirScripts}\\InsertClient.sql");
                 cmd.CommandText = script;
                 cmd.ExecuteNonQuery();
             }
+            reader.Close();
         }
 
         private void GetCategories()
@@ -169,20 +169,15 @@ namespace EXAM_ProductShop
                 while (reader.Read())
                 {
                     Product product = new Product() { Id = Int32.Parse(reader["Id"].ToString()), Name = reader["Product"].ToString(), Price = Int32.Parse(reader["Price"].ToString()), Category = reader["Category"].ToString(), SubCategory = reader["Sub-Category"].ToString() };
-                    products.Add(product);
+                    dgProducts.Items.Add(product);
                 }
             }
-            dgProducts.ItemsSource = products;
-
         }
 
         private void FillDataGridBySubCategory(int SubCategoryId)
         {
-            if (cb_SubCategories.SelectedIndex == -1)
-            {
-                ClearDataGrid();
-                return;
-            }
+            ClearDataGrid();
+            if (cb_SubCategories.SelectedIndex == -1) return;
 
             string script = File.ReadAllText($"{dirScripts}\\viewProductsBySubCategory.sql");
             cmd.CommandText = script;
@@ -194,15 +189,13 @@ namespace EXAM_ProductShop
                 while (reader.Read())
                 {
                     Product product = new Product() { Id = Int32.Parse(reader["Id"].ToString()), Name = reader["Product"].ToString(), Price = Int32.Parse(reader["Price"].ToString()), Category = reader["Category"].ToString(), SubCategory = reader["Sub-Category"].ToString() };
-                    products.Add(product);
+                    dgProducts.Items.Add(product);
                 }
             }
-            dgProducts.ItemsSource = products;
         }
 
         private void ClearDataGrid()
         {
-            dgProducts.ItemsSource = null;
             dgProducts.Items.Clear();
         }
 
