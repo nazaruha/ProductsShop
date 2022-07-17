@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EXAM_ProductShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +29,8 @@ namespace EXAM_ProductShop
         {
             if (CheckTxts())
             {
-
-                MainWindow mainWindow = new MainWindow();
+                Client client = new Client() { Name = txtName.Text, Phone = txtPhone.Text };
+                MainWindow mainWindow = new MainWindow(client);
                 this.Close();
                 mainWindow.ShowDialog();
             }
