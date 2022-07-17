@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EXAM_ProductShop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="488" Width="702">
+        Title="MainWindow" Height="522" Width="702">
     <Canvas>
         <ComboBox Name ="cb_Categoriies" FontSize="16" Height="30" Canvas.Left="10" Canvas.Top="50" Width="180" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="cb_Categoriies_SelectionChanged"/>
         <Label Content="Category" FontSize="20" Height="40" Canvas.Left="51" Canvas.Top="10" Width="98" HorizontalAlignment="Left" VerticalAlignment="Center"/>

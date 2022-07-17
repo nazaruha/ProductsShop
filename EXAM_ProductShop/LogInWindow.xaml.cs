@@ -28,6 +28,7 @@ namespace EXAM_ProductShop
         {
             if (CheckTxts())
             {
+
                 MainWindow mainWindow = new MainWindow();
                 this.Close();
                 mainWindow.ShowDialog();
