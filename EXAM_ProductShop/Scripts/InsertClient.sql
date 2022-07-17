@@ -1,0 +1,1 @@
+INSERT INTO tblClients(Name, Phone) VALUES (@NameField, @PhoneField)
