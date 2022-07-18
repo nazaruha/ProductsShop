@@ -1,0 +1,1 @@
+INSERT INTO tblBasket(ClientId, ProductId, [Count]) VALUES (@ClientIdField, @ProductIdField, @CountField)
