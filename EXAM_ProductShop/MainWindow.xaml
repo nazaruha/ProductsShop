@@ -22,6 +22,13 @@
                 <DataGridTextColumn Header="Sub-category" Binding="{Binding SubCategory}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Name="btnBasket" Content="Basket" FontSize="20" Height="31" Canvas.Left="577" Canvas.Top="85" Width="91" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnBasket_Click"/>
+        <Button x:Name="btnBasket_Copy" Content="" FontSize="20" Height="42" Canvas.Left="547" Canvas.Top="420" Width="45" Click="btnBasket_Click" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button.Background>
+                <ImageBrush ImageSource="/shop-cart-icon.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Label Content="To your basket" FontWeight="DemiBold" Canvas.Left="597" Canvas.Top="428"/>
 
     </Canvas>
 </Window>

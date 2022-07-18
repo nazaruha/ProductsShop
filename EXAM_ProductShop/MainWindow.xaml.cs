@@ -26,6 +26,7 @@ namespace EXAM_ProductShop
         private string database { get; set; } = "ProductsShop2";
         private string dirScripts { get; set; } = "Scripts";
         public string connectionDB { get; set; } = "Data Source=.;Integrated Security=True;";
+        public Client client { get; set; }
         private SqlConnection con { get; set; }
         private SqlCommand cmd { get; set; }
 
@@ -39,6 +40,7 @@ namespace EXAM_ProductShop
             con.Open();
             cmd = con.CreateCommand();
 
+            this.client = client;
             AddClientToDB(client);
             GetCategories();
 
@@ -199,6 +201,11 @@ namespace EXAM_ProductShop
             dgProducts.Items.Clear();
         }
 
-        
+        private void btnBasket_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgProducts.SelectedIndex == -1) return;
+            AddToBasketWindow toBasket = new AddToBasketWindow((dgProducts.SelectedItem as Product), client, cmd);
+            toBasket.ShowDialog();
+        }
     }
 }

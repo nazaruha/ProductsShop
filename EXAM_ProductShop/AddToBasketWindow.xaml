@@ -1,0 +1,26 @@
+﻿<Window x:Class="EXAM_ProductShop.AddToBasketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAM_ProductShop"
+        mc:Ignorable="d"
+        Title="AddToBasketWindow" Height="200" Width="268">
+    <Canvas>
+        <StackPanel>
+            <Label Name="lbProductName" Content="[ProductName]" FontSize="20" FontWeight="ExtraBold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="36,0,0,0"/>
+            <WrapPanel Margin="0,14,0,0">
+                <TextBox Name="txtCountToBuy" Text="1" TextAlignment="Center"  FontSize="20"  Width="80" Margin="14,0,0,0" TextChanged="txtCountToBuy_TextChanged"/>
+                <TextBox Name="txtPrice" Text="$" IsReadOnly="False" TextAlignment="Center"  FontSize="20"  Width="80" Margin="14,0,0,0"/>
+                <Image Name="imgIncrease" Source="/Button-Upload-icon.png" Height="26" Width="20" Margin="8,0,0,0" MouseDown="imgIncrease_MouseDown"/>
+                <Image Name="imgDecrease" Source="/Button-Download-icon.png" Height="26" Width="20" Margin="8,0,0,0" MouseDown="imgDecrease_MouseDown"/>
+            </WrapPanel>
+            <Button x:Name="btnBasket_Copy" Content="" FontSize="20" Height="42" Width="45" Margin="0,20,0,0" Click="btnBasket_Copy_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/shop-cart-icon.png" Stretch="Fill"/>
+                </Button.Background>
+            </Button>
+            <Label Content="To your basket" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Canvas>
+</Window>
