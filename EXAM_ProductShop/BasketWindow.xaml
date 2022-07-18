@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="BasketWindow" Height="424" Width="561">
     <Canvas>
-        <DataGrid Height="398" Width="371">
+        <DataGrid Name="dgBasket" Height="398" Width="371">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="30"/>
                 <DataGridTextColumn Header="Product" Binding="{Binding Name}" Width="120"/>
@@ -15,5 +15,9 @@
                 <DataGridTextColumn Header="Count" Binding="{Binding Count}" Width="80"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label Content="Quantity" FontSize="20" FontWeight="DemiBold" Canvas.Left="423" Canvas.Top="31"/>
+        <Image Name="imgIncrease" Source="/Button-Upload-icon.png" Height="29" Width="32" MouseDown="imgIncrease_MouseDown" Canvas.Left="432" Canvas.Top="68"/>
+        <Image Name="imgDecrease" Source="/Button-Download-icon.png" Height="29" Width="32" MouseDown="imgDecrease_MouseDown" Canvas.Left="466" Canvas.Top="68"/>
+        <Button Name="btnPurchase" Content="Purchase" FontSize="20" FontWeight="DemiBold" Height="32" Canvas.Left="423" Canvas.Top="312" Width="100" Click="btnPurchase_Click"/>
     </Canvas>
 </Window>

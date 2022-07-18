@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\ClientBasketProduct.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -120,6 +121,12 @@
   <ItemGroup>
     <Resource Include="Button-Upload-icon.png" />
     <Resource Include="Button-Download-icon.png" />
+    <Content Include="Scripts\viewClient%27sBasket.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\UpdateBasket.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\InsertBasket.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

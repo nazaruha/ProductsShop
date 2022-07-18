@@ -155,11 +155,8 @@ namespace EXAM_ProductShop
 
         private void FillDataGridByCategory(int CategoryId)
         {
-            if (cb_Categoriies.SelectedIndex == -1)
-            {
-                ClearDataGrid();
-                return;
-            }
+            ClearDataGrid();
+            if (cb_Categoriies.SelectedIndex == -1) return;
 
             string script = File.ReadAllText($"{dirScripts}\\viewProductsByCategory.sql");
             cmd.CommandText = script;
@@ -206,6 +203,12 @@ namespace EXAM_ProductShop
             if (dgProducts.SelectedIndex == -1) return;
             AddToBasketWindow toBasket = new AddToBasketWindow((dgProducts.SelectedItem as Product), client, cmd);
             toBasket.ShowDialog();
+        }
+
+        private void btnClientBasket_Click(object sender, RoutedEventArgs e)
+        {
+            BasketWindow clientBasket = new BasketWindow(client, cmd, connectionDB, database);
+            clientBasket.ShowDialog();
         }
     }
 }
