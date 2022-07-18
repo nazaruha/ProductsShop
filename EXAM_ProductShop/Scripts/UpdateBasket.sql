@@ -1,1 +1,1 @@
-UPDATE tblBasket SET [Count] = @CountField WHERE ClientId = @ClientIdField AND ProductId = @ProductIdField
+UPDATE tblBasket SET [Count] = @NewCountField WHERE ClientId = @ClientIdField AND ProductId = @ProductIdField
