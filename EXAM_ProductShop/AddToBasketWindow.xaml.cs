@@ -100,22 +100,45 @@ namespace EXAM_ProductShop
             int clientId = GetClientId();
             int productId = GetProductId();
 
-            string script = File.ReadAllText($"{dirScripts}\\InsertBasket.sql");
-            cmd.CommandText = script;
+            cmd.CommandText = "SELECT * " +
+                "FROM tblBasket " +
+                @"WHERE ClientId = @ClientIdField AND ProductId = @ProductIdField";
             cmd.Parameters.AddWithValue("@ClientIdField", clientId);
             cmd.Parameters.AddWithValue("@ProductIdField", productId);
             cmd.Parameters.AddWithValue("@CountField", product.Count);
-            cmd.ExecuteNonQuery();
+            var reader = cmd.ExecuteReader();
+            reader.Read();
+            string script;
+            try
+            {
+                if (reader["ClientId"].ToString() != null && reader["ProductId"].ToString() != null)
+                {
+                    int oldCount = int.Parse(reader["Count"].ToString());
+                    reader.Close();
+                    script = File.ReadAllText($"{dirScripts}\\UpdateBasket.sql");
+                    cmd.CommandText = script;
+                    cmd.Parameters.AddWithValue("@NewCountField", oldCount + product.Count);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                reader.Close();
+                script = File.ReadAllText($"{dirScripts}\\InsertBasket.sql");
+                cmd.CommandText = script;
+                cmd.ExecuteNonQuery();
+            }
+            cmd.Parameters.Clear();
             this.Close();
-
         }
 
         private int GetClientId()
         {
             cmd.CommandText = "SELECT Id " +
                 "FROM tblClients " +
-                "WHERE Name = @NameField";
+                "WHERE Name = @NameField AND Phone = @PhoneField";
             cmd.Parameters.AddWithValue("@NameField", client.Name);
+            cmd.Parameters.AddWithValue("@PhoneField", client.Phone);
 
             var reader = cmd.ExecuteReader();
             reader.Read();
